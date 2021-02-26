@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>@fixme Title of the presentation</title>
+
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/black.css" id="theme">
+
+  <style type="text/css">
+      .reveal h1 > small, /* reveal is stated here to regain priority order of the CSS directives. Saves an !important statement. */
+      .reveal h2 > small {
+          display: block;
+          text-transform: none;
+          font-style: italic;
+          font-size: 20%
+      }
+      .reveal h2 > small {
+          font-size: 60%;
+      }
+
+      .reveal section[data-background-image] > h1 {
+          text-shadow: 0 0 .5em #000;
+      }
+
+      dfn { font-variant: small-caps; white-space: nowrap }
+
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <section>
+
+    </section>
+
+  </div>
+</div>
+
+<script src="node_modules/reveal.js/dist/reveal.js"></script>
+<script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+<script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+    hash: true,
+
+    // Learn about plugins: https://revealjs.com/plugins/
+    plugins: [/* RevealMarkdown, RevealHighlight, */ RevealNotes ]
+  });
+</script>
+</body>
+</html>
