@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>@fixme Title of the presentation</title>
+  <title>Error culture and management as done by aviation</title>
 
   <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
   <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
@@ -18,15 +18,36 @@
           font-style: italic;
           font-size: 20%
       }
+
       .reveal h2 > small {
           font-size: 60%;
       }
 
-      .reveal section[data-background-image] > h1 {
+      .reveal section[data-background-image] > * {
           text-shadow: 0 0 .5em #000;
       }
 
-      dfn { font-variant: small-caps; white-space: nowrap }
+      section > footer:last-child { /* copyright/attributions */
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          text-align: right;
+          font-size: 1rem;
+      }
+
+      section dfn {
+          font-variant: small-caps;
+          white-space: nowrap
+      }
+
+      section img {
+          height: auto
+      }
+
+      /* Slide-specific vertical centering override, as suggested in https://github.com/hakimel/reveal.js/issues/2099#issuecomment-366583613 */
+      .reveal .slides section[data-vertical-align-top] {
+          top: 0 !important;
+      }
 
   </style>
 </head>
@@ -35,8 +56,471 @@
 <div class="reveal">
   <div class="slides">
 
-    <section>
+    <section data-background-image="assets/pexels-kelly-lacy-4269510.jpg" data-background-opacity="0.7">
+      <h1>Error culture as done by aviation</h1>
+      <p>Adrian Föder, <code>@afoeder</code></p>
 
+      <aside class="notes"><p>Today I want to give you an insight of error management and culture, and how
+      one of the industries who reaally depends on avoiding errors is doing it: the aviation industry. We will
+      find out how we can apply their knowledge to our daily work. Granted, in our case errors usually don't lead
+      to fatalities, but at least inconveniences that we're interested in avoiding.</p></aside>
+
+      <footer><small><a href="https://www.pexels.com/photo/pilots-operating-airplane-in-cockpit-during-flight-4269510/">Photo</a>
+        by Kelly Lacy from Pexels</small></footer>
+    </section>
+
+    <section>
+      <img class="stretch" src="assets/errors-stickies.png" width="1500" height="979">
+
+      <aside class="notes">
+        <p>In our daily business, we are confronted with "errors" all the time. And a various amount of issues
+          is just considered an "error" or a "failure" or the like, but when looking closer, they are actually
+          of a different nature.</p>
+      </aside>
+    </section>
+
+    <section>
+      <img class="stretch" src="assets/errors-speech-bubbles.png" width="1012" height="902">
+
+      <aside class="notes">
+        <p>One might say, …</p>
+      </aside>
+    </section>
+
+    <section data-background-image="assets/johnny-english.jpg" data-background-size="contain">
+
+      <aside class="notes">
+        <p>So, when looking at English (I initially had this talk in German, so this is a bit awkward,
+          but anyways, …</p>
+      </aside>
+
+      <footer><small>Image: from https://www.metacritic.com/movie/johnny-english-strikes-again/trailers/10701014</small>
+      </footer>
+
+    </section>
+
+    <section>
+      <div class="r-stack">
+        <img src="assets/linguee-mistake-1.png" height="741" width="1500"/>
+        <img class="fragment" src="assets/linguee-mistake-2.png" height="725" width="1500"/>
+        <img class="fragment" src="assets/linguee-mistake-3.png" height="620" width="1500"/>
+      </div>
+
+      <aside class="notes">
+        <p>So, what we're talking about actually can be expressed with different words; (next)
+          so, bear with me when some (next) vocabulary isn't fully accurate.</p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Errors mostly remain without consequences</h2>
+      <p>However lead to an <dfn>accident</dfn> under suitable circumstances.</p>
+
+      <aside class="notes">
+        <p>Anyways, typical errors in most cases just happen, but they just stay being errors
+          and usually don't have real consequences. However, under the right preconditions, they
+          actually might lead to an accident. In our biz, an accident might range from "just" an outage or
+          be as serious as a data breach incident.</p>
+      </aside>
+    </section>
+
+    <section>
+      <img src="assets/error-accident.png" height="485" width="1339"/>
+      <ul>
+        <li>Accidents always are the result of errors</li>
+        <li>but are never the result of just one single error</li>
+      </ul>
+
+      <aside class="notes"><p>So let's just say that Accidents are always the result of errors, but are
+        never the result of just a single error. Accidents are ALWAYS a concatenation of circumstances.
+      </p></aside>
+    </section>
+
+    <section>
+      <h2>Reverse</h2>
+      <p>Why does a single mistake not necessarily lead to an accident?</p>
+
+      <aside class="notes"><p>No matter what accidents in retrospect you look at, you will realize that this is the
+        law. Take Titanic or Tschernobyl. But why exactly is that?</p></aside>
+    </section>
+
+    <section>
+      <img src="assets/swiss-cheese-1.png" height="762" width="1331"/>
+
+      <aside class="notes"><p>So, in a system, you always have, consciously or not, _some_ kind of
+        layers in place that lessen the likeliness of errors.This might be, looking from back to forth, [read stickies]
+        And the presence of these layers are basicall what we know as…</p></aside>
+    </section>
+
+    <section>
+      <h2>Introducing the Swiss Cheese Model</h2>
+      <p>coined by James T. Reason</p>
+
+      <aside class="notes">the so-called Swiss Cheese Model, which has been originally propounded in the 2000s by
+        James Reason, who basically is the Godfather of modern error management.
+      </aside>
+    </section>
+
+    <section data-transition="fade" data-transition-speed="fast">
+      <img src="assets/swiss-cheese-2.png" height="918" width="1500"/>
+      <aside class="notes">
+        <p>So the model says, we have, as inputs, a vast amount of hazards, and these slices of cheese
+          prevent that eventually an accident happens. But every layer of defence has holes in it,
+          just like a slice of Emmentaler has. And if those layers come to an alignment in an unfavorable manner,
+          the initial hazard had the chance to sneak through and become a genuine accident.</p>
+      </aside>
+    </section>
+    <section data-transition="fade" data-transition-speed="fast">
+      <img src="assets/swiss-cheese-3.png" height="918" width="1500"/>
+      <aside class="notes">
+        <p>Everything, no matter how irrelevant it looks, is a layer. It could be a permission system in place,
+          or a dyed console which clearly and loudly indicates whether you're typing in the development or production
+          system's console.</p>
+      </aside>
+    </section>
+    <section data-transition="none" data-transition-speed="fast">
+      <img src="assets/swiss-cheese-4.png" height="974" width="1281"/>
+
+      <aside class="notes">
+        <p>James reason partitioned failures in two kinds: in "Latent failures" and "Active failures".
+          Later, he renamed it a bit to be "underlying causes" and "immediate causes". The "underlying causes" are
+          hidden and only come to the surface when they are examined due to an accident happened. They lie in the
+          organization or the management. — And at some point in time an event happens, which only happens because
+          the organizational circumstances has made it possible altogether.</p>
+      </aside>
+    </section>
+    <section data-transition="none" data-transition-speed="fast">
+      <img src="assets/swiss-cheese-5.png" height="949" width="1500"/>
+
+      <aside class="notes">
+        <p>When an Accident happens, the blaming is usually targeted at the players acting at the front line.
+          But isn't it really an underlying or a system failure? Just take a stupid bug as an example. Obviously the
+          developer is to blame who literally wrote the code no? Of course not: the organization allowed for
+          inappropriate
+          staffing, they should pair an experienced with an unexperienced etc. — The opposite are looking at active
+          failures:
+          unsafe acts or omissions of persons, Forgetfulness, inattention, poor motivation, carelessness, negligence, recklessness.</p>
+
+      </aside>
+    </section>
+
+    <section>
+      <h2>Human Factor</h2>
+      <p>Goal: avoidance of human error</p>
+    </section>
+
+    <section>
+      <h2>Errors can result from "wrong decisions"</h2>
+    </section>
+
+    <section>
+      <h2>We live with mistakes and risks</h2>
+      <p>consciously or unconsciously</p>
+
+      <aside class="notes">We, as people, live the hole day long with mistakes and risks, either consciously
+        or unconciously.
+      </aside>
+    </section>
+
+    <section>
+      <h2>We live with <dfn>Hazardous Attitudes</dfn></h2>
+      <ul>
+        <li>Anti-authority (“Don’t tell me”)</li>
+        <li>Impulsiveness (“Do it quickly”)</li>
+        <li>Invulnerability (“It won’t happen to me”)</li>
+        <li>Macho (“I can do it.”)</li>
+        <li>Resignation (“What’s the use?”)</li>
+      </ul>
+
+      <aside class="notes">
+        AA: I don't let anyone tell me what to do<br>
+        Impulsiveness: Act quickly, don't think long or weigh consequences<br>
+        Invuln: happens to others only, why should it happen to me?<br>
+        Macho: The show-off, they seek extra unnecessary risk to prove to others how great they are<br>
+        Resignation: no matter what I try it doesn't help. On failure it's deduced to wrong decisions, on succes
+        it's considered just because of luck or coincidence.<br>
+      </aside>
+    </section>
+
+    <section>
+      <h2>»To err is human«</h2>
+      <p class="fragment" style="text-align: right"><small>*Disclaimer: this doesn't mean they're always OK</small></p>
+    </section>
+
+    <section>
+      <div class="r-stack">
+        <img src="assets/cognitive-dissonance.png" width="1239" height="449">
+        <img class="fragment" src="assets/cognitive-dissonance-2.png" width="1247" height="449">
+      </div>
+    </section>
+
+    <section>
+      <h2>Cognitive dissonance</h2>
+
+      <aside class="notes"><p>
+        In our case cognitive dissonance means the habit of whitewashing things; twist facts so they fit our overall
+        image of the situation: signs of sources of errors.
+      </p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>So how to really avoid mistakes?</h2>
+
+      <aside class="notes">Well since to »err is human«, as we've already established, we cannot really avoid
+        _mistakes_ altogether, but we can make sure that don't lead to an accident!
+      </aside>
+    </section>
+
+    <section>
+      <img src="assets/error-accident.png" height="485" width="1339"/>
+      <ul>
+        <li>Accidents always are the result of errors</li>
+        <li>but are never the result of just one single error</li>
+      </ul>
+      <aside class="notes">
+        <p>We've learned this already: only the concatenation of multiple error eventually lead to an accident.</p>
+      </aside>
+    </section>
+
+    <section data-background-image="assets/nbaa-pyramid.png" data-background-size="contain">
+      <aside class="notes">
+        Let's check this visualization from the NBAA, the National Business Aviation Association. Statistically,
+        out of 600 _documented_ events eventually an accident happens.
+      </aside>
+    </section>
+
+    <section>
+      <h3>International Nuclear Event Scale (INES)</h3>
+      <figure style="background-color: whitesmoke;">
+        <img src="assets/INES_en.svg">
+      </figure>
+
+      <aside class="notes">
+        And looking at the nuclear power industry, they also have a similar picture. However
+        Consume this INES scale with care, it has its weaknesses. It's made for PR to ease the communication
+        to the public; and not for scientific work.
+      </aside>
+    </section>
+
+    <section>
+      <h2>"Mistakes make you wise"</h2>
+      <img src="assets/risk-knowledge-pyramid.png" height="550" width="987"/>
+
+      <aside class="notes">We have the chance to gain knowledge and wisdom from mistakes in order to avoid them
+        in the future.
+      </aside>
+    </section>
+
+    <section>
+      <h2>Mistakes must be processed</h2>
+      <ul>
+        <li>…with us for ourselves (mostly inherently given)</li>
+        <li>to tighten the "cheese hole": with the organization to give it the opportunity to learn</li>
+      </ul>
+
+      <aside class="notes"><p>Mistakes that have been done must be dealt with. On one hand "silently" with ourselves,
+        which mostly happens unconsciously anyways; and to tighten the cheese hole of the respective slice:
+        it must be addressed within the organisation to give the opoprtunity to learn. We all know this concept
+        already called "post mortem" or Fuckup Nights etc.</p></aside>
+    </section>
+
+    <section>
+      <h2>No "Pu.Mist. culture"</h2>
+      <blockquote>
+        Punishing mistakes and thus encouraging the covering up of mistakes prevents an active
+        dealing with the causes
+      </blockquote>
+
+      <aside class="notes"><p>To really enable this we need to fight against a "punishing mistakes" culture. When
+        mistakes are punished, they will hardly be admitted and this in turn prevents engaging with the mistake.</p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Goal: strengthen the safety net</h2>
+      <p>For ourselves and for the system.</p>
+      <p>For everybody.</p>
+    </section>
+
+    <section>
+      <h2>BFU</h2>
+      <p>German Federal Bureau of Aircraft Accident Investigation</p>
+
+      <aside class="notes"><p>
+        In Germany there is the BFU, the Bundestelle für Flugunfalluntersuchung; many other aviation industry states
+        have a similar authority, who step on the plan when there are incidents.
+      </p>
+      </aside>
+    </section>
+
+    <section>
+      <blockquote>» The fundamental purpose of the BFU is: To <strong>improve aviation safety</strong> by determining
+        the causes of
+        accidents and serious incidents and making safety recommendations <strong>intended to prevent
+          recurrence</strong>. It is <strong>not to
+          apportion blame or liability</strong>.«
+      </blockquote>
+      <aside class="notes"><p>On their website it reads,</p></aside>
+    </section>
+
+    <section data-background-image="assets/screenshot-bfu.png" data-background-size="contain">
+      <aside class="notes"><p>They publish thorough reports of the sequence of events they concluded on during
+        their investigation. I can really recommend checking these out, it's really fascinating to see how they _not_
+        blame in their narrative. It is really just an observation and it's up to the reader to make any
+        conclusions.</p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Investigation analysis model</h2>
+      <p>The Australian Transport Safety Bureau (ATSB) developed a comprehensive investigation analysis framework</p>
+
+      <aside class="notes"><p>A similar authority from Down Under, the ATSB, once published their Investigation analysis
+        model.</p></aside>
+    </section>
+
+    <section>
+      <img class="stretch" src="assets/atsb-inv-analysis.jpg" height="407" width="494"/>
+      <aside class="notes"><p>
+        We can resemble the cheese slices again. At the top, the root, there's the organizational influences that were
+        playing a role. This is about Regulations, culture, change management.<br>
+        Then there's risk minimization. To allow for check lists, code review, pair programming or test scenarios.<br>
+        Local conditions are for example fatigue, work load, lighting situation, or stress.<br>
+        Individual actions now is really about the operations of an actor:
+        Handlungen: Negligence, routine, a typo, an oversight<br>
+        And eventually, and at this point we cannot prevent the accident anymore: there's the event:
+        An outage, deleted the production database, or having a security leak.<br>
+        And note the arror on the right: the investigation path is, of course, from the event to the top where
+        the organizational issues lie.</p>
+        <p>[perhaps anecdote of running out of fuel]</p>
+      </aside>
+    </section>
+
+    <section>
+      <img src="assets/atsb-org-influences.png" height="96" width="372"/>
+      <h2>Organizational influences</h2>
+      <ul>
+        <li>Have a significant influence on the occurrence of accidents</li>
+        <li>Are only evident in combination with local or triggering factors.</li>
+        <li class="fragment fade-up highlight-red">Already present well before the occurrence of a recognizable accident
+          sequence!
+        </li>
+      </ul>
+      <aside class="notes"><p>Important to be aware of is that the organizational influences, even though
+        deeply buried, take an important role in allowance of an accident. And since they're so deeply buried,
+        they only come to light in combination with an actually triggering factor.</p></aside>
+    </section>
+
+    <section>
+      <h2>Cause search</h2>
+      <p>Don't ask "Who was at fault?"</p>
+      <p>but</p>
+      <ul>
+        <li>What exactly has been done wrong?</li>
+        <li>Why has it been done wrong?</li>
+        <li>What circumstances favored the error?<br><small class="fragment">i.e. Team/Orga/Tech</small></li>
+      </ul>
+
+      <aside class="notes"><p>So when conducting a cause search, don't ask […]</p></aside>
+    </section>
+
+    <section>
+      <h2>Learning from making mistakes</h2>
+      <ul>
+        <li>Abandon PuMist culture</li>
+        <li>Turning to constructive error management</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>You as the employees know the weak points.</h2>
+      <p>You can gather them together.</p>
+    </section>
+
+    <section>
+      <h2>Opportunities for improvement</h2>
+      <ul>
+        <li>What problems do you see in the company?</li>
+        <li>What can/should the company do to improve?</li>
+      </ul>
+    </section>
+
+    <section data-background-image="assets/pexels-lukas-652352.jpg" data-background-opacity="0.6">
+      <h2>In last consequence</h2>
+      <p>you are asked yourselves!</p>
+
+      <footer><small><a href="https://www.pexels.com/photo/man-in-suit-652352/">Photo</a> by Lukas from Pexels</small>
+      </footer>
+    </section>
+
+    <section data-background-image="assets/Cockpit_of_Air_France_A380_F-HPJC_4943129892.jpg"
+             data-background-opacity="0.6">
+      <h2>Threat and error management<small>"TEM"</small></h2>
+
+      <aside class="notes"><p>The Professional aviation industry has visualized this with "Thread and error management".
+      </p></aside>
+
+      <footer><small><a
+          href="https://commons.wikimedia.org/wiki/File:Cockpit_of_Air_France_A380_F-HPJC_(4943129892).jpg">Photo</a>:
+        <a href="https://www.flickr.com/people/19229064@N00">Andy Mitchell</a> from Glasgow, UK; CC-BY-SA</small>
+      </footer>
+    </section>
+
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem1.png" height="377" width="1141"/>
+      <aside class="notes"><p>At the base, there is a Threat. A threat can occur unexpectedly, for example weather,
+      terrain, or aircraft malfunctions.</p></aside>
+    </section>
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem2.png" height="779" width="1147"/>
+      <aside class="notes"><p>If not dealt with properly, a threat will grow to a Crew error, caused by human action,
+      or inaction; or bad judgement, communication problems etc. The impact of such an error can still quickly be reduced
+        when properly managed.</p></aside>
+    </section>
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem3.png" height="704" width="1143"/>
+      <aside class="notes"><p>However if not, it becomes an Undesired Aircraft State. Managing these kind of states
+      are vital since if they are not they can result in serious aircraft accidents.</p></aside>
+    </section>
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem4.png" height="843" width="1133"/>
+      <aside class="notes"><p>And now, we have an Incident or accident.</p></aside>
+    </section>
+
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem5.png" height="797" width="1175"/>
+      <aside class="notes"><p>So the different stages can be mitigated. At the base of all, we can avoid already
+      even the occurrence of a Threat by maintaining a proper health condition, training, education, check lists,
+      and the team climate. Pilots are an a**crapful of their time in simulators and training stuff like engine
+      failure so they can replay many of typical issues from muscle memory.</p></aside>
+    </section>
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem6.png" height="756" width="1218"/>
+      <aside class="notes"><p>After a Threat occurs, it can be intercepted by according Threat management. Recognize
+      a threat altogether, take countermeasures and apply trained behavior.</p></aside>
+    </section>
+
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem7.png" height="756" width="1191"/>
+      <aside class="notes"><p>If this leads to no effect, this means we're having a Crew error. This also must be managed
+      of course by scrutinizing, manage workload, cross-check and the willingness to admit faults. Communication
+      between the captain and Co is crucial.</p></aside>
+    </section>
+    <section data-transition="fade" data-vertical-align-top>
+      <img src="assets/tem8.png" height="756" width="1160"/>
+      <aside class="notes"><p>If despite all a UAS occurs, the situation has to be stabilized, deviations
+      must be corrected, but promptly!</p></aside>
+    </section>
+
+    <section>
+      <h2>TEM can be applied at any time</h2>
+      <ul>
+        <li>Immediately prior to a deployment ("Deployment Briefing")</li>
+        <li>"In front of the coffee machine"</li>
+      </ul>
+
+      <aside class="notes"><p>For yourself, keep in mind that TEM can be applied at any time!</p></aside>
     </section>
 
   </div>
@@ -54,7 +538,7 @@
     hash: true,
 
     // Learn about plugins: https://revealjs.com/plugins/
-    plugins: [/* RevealMarkdown, RevealHighlight, */ RevealNotes ]
+    plugins: [/* RevealMarkdown, RevealHighlight, */ RevealNotes]
   });
 </script>
 </body>
