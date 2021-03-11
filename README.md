@@ -1,9 +1,5 @@
-# reveal.js slide deck
+# Error culture and management how Aviation does it
 
-This is a [reveal.js](https://revealjs.com/) slide deck. Install and start it with npm:
+This is a [reveal.js](https://revealjs.com/) slide deck. After cloning you have to `git submodule init && git submodule update` in order to make the reveal.js assets available.
 
-``` bash
-$ npm install
-```
-
-The base file is `index.html`, open it in a web browser. Reveal.js will be fetched from `node_modules/reveal.js/…`.
+The base file is `index.html`, open it in a web browser. Reveal.js dependencies will be fetched from `reveal.js/dist/…` which is the git submodule you've fetched earlier.
