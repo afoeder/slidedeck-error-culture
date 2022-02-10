@@ -60,7 +60,12 @@
       <h1>Error culture as done by aviation</h1>
       <p>Adrian Föder, <code>@afoeder</code></p>
 
-      <aside class="notes"><p>Today I want to give you an insight of error management and culture, and how
+      <aside class="notes"><p lang="de">Heute will ich Euch einen Einblick in Fehlerkultur bzw. Fehlermanagement geben.
+        und darüber, wie die Industrie damit umgeht, die wiiirklich auf die Vermeidung von Fehlern angewiesen ist:
+        die Luftfahrt. Wir wollen un ansehen, wie wir deren erworbenes Wissen auf unsere tägliche Arbeit anwenden können.
+        — Zugegeben, in unserem Fall führen Fehler selten zu einer Katastrophe; es lohnt sich aber dennoch, zumindest
+        Unannehmlichkeiten zu vermeiden.</p>
+        <p>Today I want to give you an insight of error management and culture, and how
         one of the industries who reaally depends on avoiding errors is doing it: the aviation industry. We will
         find out how we can apply their knowledge to our daily work. Granted, in our case errors usually don't lead
         to fatalities, but at least inconveniences that we're interested in avoiding.</p></aside>
@@ -73,6 +78,9 @@
       <img class="stretch" src="assets/errors-stickies.png" width="1500" height="979">
 
       <aside class="notes">
+        <p lang="de">Wir sind den lieben langen Tag mit "Fehlern" konfrontiert. Und in den meisten Fällen sprechen
+        wir lapidar von "Fehlern", wenn wir aber näher draufschauen, sieht man, dass sie gewissermaßen unterschiedlicher
+        Natur sind.</p>
         <p>In our daily business, we are confronted with "errors" all the time. And a various amount of issues
           is just considered an "error" or a "failure" or the like, but when looking closer, they are actually
           of a different nature.</p>
@@ -83,6 +91,8 @@
       <img class="stretch" src="assets/errors-speech-bubbles.png" width="1012" height="902">
 
       <aside class="notes">
+        <p lang="de">Man könne bspw. sagen, "Ein Fehler ist passiert", oder "Du hast einen Fehler gemacht", oder,
+          "Da ist ein Fehler auf dem System".</p>
         <p>One might say, …</p>
       </aside>
     </section>
@@ -90,6 +100,7 @@
     <section data-background-image="assets/johnny-english.jpg" data-background-size="contain">
 
       <aside class="notes">
+        <p lang="de">Wenn wir also auf English gucken, …</p>
         <p>So, when looking at English (I initially had this talk in German, so this is a bit awkward,
           but anyways, …</p>
       </aside>
@@ -107,6 +118,9 @@
       </div>
 
       <aside class="notes">
+        <p lang="de">Sehen wir, dass das, was wir gemeinhin als "Fehler" bennennen (next)
+          im Englischen aber differenzierter ausgedrückt wird (next)
+          wobei das umgekehrt natürlich auch gelten kann.</p>
         <p>So, what we're talking about actually can be expressed with different words; (next)
           so, bear with me when some (next) vocabulary isn't fully accurate. Just keep in mind that when in German
           we're mostly talking about "Fehler", in English it can be error, mistake, failure or the like.</p>
@@ -118,6 +132,12 @@
       <p>However lead to an <dfn>accident</dfn> under suitable circumstances.</p>
 
       <aside class="notes">
+        <p lang="de">Jedenfalls ist einer meiner key-takeaways für heute, dass in den Meisten Fällen
+          hier und da Fehler einfach passieren, aber sie bleiben Fehler und haben meistens keine
+          weiteren Konsequenzen. — ABER, wenn bestimmte Umstände aufeinandertreffen, können sie wirklich
+          zu einem Zwischenfall oder Unfall werden. Für uns in der IT kann solch ein Zwischenfall ein
+          Spektrum haben von "nur" einem Ausfall eines Dienstes wo ein Kunde halt grade nix machen kann,
+          bis hin zu etwas so ernsthaften wie Kundendaten oder monetäre Implikationen.</p>
         <p>Anyways, typical errors in most cases just happen, but they just stay being errors
           and usually don't have real consequences. However, under the right preconditions, they
           actually might lead to an accident. In our biz, an accident might range from "just" an outage or
@@ -132,7 +152,10 @@
         <li>but are never the result of just one single error</li>
       </ul>
 
-      <aside class="notes"><p>So let's just say that Accidents are always the result of errors, but are
+      <aside class="notes">
+        <p lang="de">Andersrum formuliert, Unfälle sind immer das Resultat von  Fehlern, sind aber NIE die
+          Folge von lediglich einem einzelnen Fehler. Sie sind IMMER die Folge einer Verkettung von Umständen.</p>
+        <p>So let's just say that Accidents are always the result of errors, but are
         never the result of just a single error. Accidents are ALWAYS a concatenation of circumstances.
       </p></aside>
     </section>
@@ -141,14 +164,23 @@
       <h2>Reverse</h2>
       <p>Why does a single mistake not necessarily lead to an accident?</p>
 
-      <aside class="notes"><p>No matter what accidents in retrospect you look at, you will realize that this is the
+      <aside class="notes">
+        <p lang="de">Ganz egal auf welche Unfälle wir persönlich oder allgemein zurückblicken werden wir feststellen,
+          dass dies wirklich Gesetz ist. Schaut Euch Titanic oder Tschernobyl an. Aber woran liegt das?</p>
+        <p>No matter what accidents in retrospect you look at, you will realize that this is the
         law. Take Titanic or Tschernobyl. But why exactly is that?</p></aside>
     </section>
 
     <section>
       <img src="assets/swiss-cheese-1.png" height="762" width="1331"/>
 
-      <aside class="notes"><p>So, in a system, you always have, consciously or not, _some_ kind of
+      <aside class="notes">
+        <p lang="de">In einem System haben wir, bewusst oder unbewsst, immer irgendeine Art von Schutzfiltern, die
+        die Wahrscheinlichkeit des Auftretens von Fehlern reduzieren. Das könnte bspw. sein, Anforderungen ordentlich
+          zu definieren, Statische Code-Analyse zu machen, einen Code-Review oder Vier-Augen-Prinzip zu pflegen,
+          und natürlich eine QA und Tests zu machen. Und genau diese Art von Schutzfiltern oder Ebenen betrachten wir
+          als …</p>
+        <p>So, in a system, you always have, consciously or not, _some_ kind of
         layers in place that lessen the likeliness of errors.This might be, looking from back to forth, [read stickies]
         And the presence of these layers are basicall what we know as…</p></aside>
     </section>
@@ -157,14 +189,21 @@
       <h2>Introducing the Swiss Cheese Model</h2>
       <p>coined by James T. Reason</p>
 
-      <aside class="notes">the so-called Swiss Cheese Model, which has been originally propounded in the 2000s by
-        James Reason, who basically is the Godfather of modern error management.
+      <aside class="notes">
+        <p lang="de">das sogenannter Schweizer-Käse-Modell, welches von James Reason in den 2000ern geprägt wurde.
+        Dieser James Reason ist im Prinzip der Urvater von modernem Fehlermanagement und -Kultur.</p>
+        <p>the so-called Swiss Cheese Model, which has been originally propounded in the 2000s by
+        James Reason, who basically is the Godfather of modern error management.</p>
       </aside>
     </section>
 
     <section data-transition="fade" data-transition-speed="fast">
       <img src="assets/swiss-cheese-2.png" height="918" width="1500"/>
       <aside class="notes">
+        <p lang="de">Das Model besagt also, dass wir als Eingangsgröße unzählige Gefahren haben, und die Scheiben
+          des Käses verhindern, dass letztliche daraus ein Unfall passiert. Aber jede Scheibe hat Löcher, genauso
+          wie eine Scheibe Emmentaler Löcher hat. Und wenn diese Löcher ungünstig in Deckung liegen, hat die
+          ursprüngliche Gefahr die Möglichkeit da durchzuschlüpfen und zu einem ausgewachsenen Problem zu werden.</p>
         <p>So the model says, we have, as inputs, a vast amount of hazards, and these slices of cheese
           prevent that eventually an accident happens. But every layer of defence has holes in it,
           just like a slice of Emmentaler has. And if those layers come to an alignment in an unfavorable manner,
@@ -174,6 +213,8 @@
     <section data-transition="fade" data-transition-speed="fast">
       <img src="assets/swiss-cheese-3.png" height="918" width="1500"/>
       <aside class="notes">
+        <p lang="de">Alles mögliche, egal wie unscheinbar es zu sein scheint, ist so eine Schutzschicht. Ein
+          Berechtigungssystem, oder ein roter Aufkleber bei Knöpfen, die man gerne verwechselt oder so.</p>
         <p>Everything, no matter how irrelevant it looks, is a layer. It could be a permission system in place,
           or a dyed console which clearly and loudly indicates whether you're typing in the development or production
           system's console.</p>
@@ -183,6 +224,12 @@
       <img src="assets/swiss-cheese-4.png" height="974" width="1281"/>
 
       <aside class="notes">
+        <p lang="de">James Reason hat Störfälle in zwei Arten unterschieden: in Aktivem und Latenten Versagen;
+        später hat er sie eher Personen und Systemfehler genannt bzw. Unmittelbare und Zugrundeliegende Ursachen.
+          Die Systemfehler bzw. Zugrundeliegenden Ursachen lauern erstmal versteckt und nur zum Vorschein, wenn
+          sie untersucht werden, weil irgendwo ein Unfall passiert ist. Sie liegen in der Organisation bzw. im
+          Management: und irgendwann passiert 'was, was nur passiert ist, weil die organisatorischen Umstände
+          es ermöglicht haben.</p>
         <p>James reason partitioned failures in two kinds: in "Latent failures" and "Active failures".
           Later, he renamed it a bit to be "underlying causes" and "immediate causes". The "underlying causes" are
           hidden and only come to the surface when they are examined due to an accident happened. They lie in the
@@ -194,6 +241,14 @@
       <img src="assets/swiss-cheese-5.png" height="949" width="1500"/>
 
       <aside class="notes">
+        <p lang="de">Wenn ein Unfall passiert, wird die Schuld meistens bei den Agierenden ganz vorne gesucht. Aber
+          ist es vielleicht nicht doch eher ein zugrundeliegender bzw. Systemfehler? Stellt Euch einen Softwarefehler
+          vor. Offensichtlich ist derjenige dafür verantwortlich, der den Code dazu geschrieben hat, oder? Nein —
+          nach unserem Modell hier hat auch die Organisation dazu beigetragen, indem sie unpassende Personalbesetzung
+          begünstigt hat, vielleicht einen unerfahrenen mit einem erfahrenen Entwickler gemeinsam arbeiten lassen sollte,
+          usw. — Umgekehrt schauen wir aber auch auf die Aktiven bzw. Personenfehler: unsichere Handlungen von
+          Beteiligten, Vergesslichkeit, Unachtsamkeit, schlechte Motivation, Fahrlässigkeit, Draufgängertum usw.</p>
+
         <p>When an Accident happens, the blaming is usually targeted at the players acting at the front line.
           But isn't it really an underlying or a system failure? Just take a stupid bug as an example. Obviously the
           developer is to blame who literally wrote the code no? Of course not: the organization allowed for
@@ -209,18 +264,28 @@
     <section>
       <h2>Human Factor</h2>
       <p>Goal: avoidance of human error</p>
+
+      <aside class="notes">
+        <p lang="de">Faktor Mensch: unser Ziel ist es, menschliches Versagen möglichst auszuschließen.</p>
+      </aside>
     </section>
 
     <section>
       <h2>Errors can result from "wrong decisions"</h2>
+
+      <aside class="notes">
+        <p lang="de">Fehler können von "falschen Entscheidungen" herrühren</p>
+      </aside>
     </section>
 
     <section>
       <h2>We live with mistakes and risks</h2>
       <p>consciously or unconsciously</p>
 
-      <aside class="notes">We, as people, live the hole day long with mistakes and risks, either consciously
-        or unconciously.
+      <aside class="notes">
+        <p lang="de">Wir, als Menschen, leben den ganzen Tag mit Fehlern und Risiken, bewusst oder unbewusst.</p>
+        <p>We, as people, live the hole day long with mistakes and risks, either consciously
+        or unconciously.</p>
       </aside>
     </section>
 
@@ -235,18 +300,30 @@
       </ul>
 
       <aside class="notes">
+        <p lang="de">Wir leben mit songenannten "Gefährlichen Grundhaltungen", dieser Begriff und die Haltungen kommmen
+          zum Beispiel genau so aus der Pilotenausbildung. Antiautorität ("ich lass mir nichts vorschreiben"),
+          Impulsivität ("Schnell schnell"), Unverletzbarkeit: "Mir passiert sowas nicht",
+          Selbstüberschätzung/Imponiergehabe ("Macho"): suchen unnötige zusätzliche Risiken um anderen zu zeigen, wie
+          toll sie sind; und Resignation
+          ("egal was ich tue, nichts hilft", oder, "da kann man eh nichts machen")</p>
+        <p>
         AA: I don't let anyone tell me what to do<br>
         Impulsiveness: Act quickly, don't think long or weigh consequences<br>
         Invuln: happens to others only, why should it happen to me?<br>
         Macho: The show-off, they seek extra unnecessary risk to prove to others how great they are<br>
         Resignation: no matter what I try it doesn't help. On failure it's deduced to wrong decisions, on succes
-        it's considered just because of luck or coincidence.<br>
+        it's considered just because of luck or coincidence.<br></p>
       </aside>
     </section>
 
     <section>
       <h2>»To err is human«</h2>
       <p class="fragment" style="text-align: right"><small>*Disclaimer: this doesn't mean they're always OK</small></p>
+
+      <aside class="notes">
+        <p lang="de">Man sagt zwar "Irren ist menschlich", [next] das heißt aber nicht, dass Fehler und Irrtümer immer
+          OK sind.</p>
+      </aside>
     </section>
 
     <section>
@@ -254,23 +331,43 @@
         <img src="assets/cognitive-dissonance.png" width="1239" height="449">
         <img class="fragment" src="assets/cognitive-dissonance-2.png" width="1247" height="449">
       </div>
+
+      <aside class="notes">
+        <p lang="de">Ihr wisst sicher, worauf das hinaus läuft; dennoch: welcher von den orangen Kreisen ist größer?
+        Richtig: es wirkt unstrittig, als wäre der rechte Kreis größer, dennoch [next] sind beide wirklich gleich groß
+        und wirken nur aufgrund ihres unterschiedlichen Kontexts unterschiedlich groß. Dieses Phänomen nennen wir…
+        [next]</p>
+      </aside>
     </section>
 
     <section>
       <h2>Cognitive dissonance</h2>
 
-      <aside class="notes"><p>
-        In our case cognitive dissonance means the habit of whitewashing things; twist facts so they fit our overall
-        image of the situation: signs of sources of errors.
-      </p>
+      <aside class="notes">
+        <p lang="de">…kognitive Dissonanz. In unserem Falle Fehlerkultur meinen wir damit die Neigung, Dinge
+          schönzumalen; Fakten unbewusst zu verdrehen, damit sie in unser allgemeines Bild passen, obwohl sie
+          ein Hinweis auf einen Fehler sein können. Stellt Euch vielleicht vor, ihr steht vor Eurem Auto, versucht
+          es aufzuschließen, es geht aber nicht. Ihr drückt den Schlüssel, drückt ihn öfter, überlegt, ob ihr die
+          Batterien tauschen sollt oder steckt ihn ins Schloss: nichts davon hilft. Und da das Auto gestern erst
+          im Service war, seid ihr sicher, dass es damit zusammenhängen muss und versteift Euch darauf; obwohl ihr
+          in Wahrheit vor einem fremden Auto steht das zufällig genauso aussieht, und Eures drei Reihen weiter steht.
+          Somit hat Euch besonders der Umstand, dass das Auto kürzlich in der Werkstatt war oder ihr es Eurem
+          Nachwuchs geliehen hattet, auf die komplett falsche Fährte gelockt.</p>
+        <p>
+          In our case cognitive dissonance means the habit of whitewashing things; twist facts so they fit our overall
+          image of the situation: signs of sources of errors.
+        </p>
       </aside>
     </section>
 
     <section>
       <h2>So how to really avoid mistakes?</h2>
 
-      <aside class="notes">Well since to »err is human«, as we've already established, we cannot really avoid
-        _mistakes_ altogether, but we can make sure that don't lead to an accident!
+      <aside class="notes">
+        <p lang="de">Nachdem Irren nun mal dennoch menschlich ist, können wir Fehler nicht komplett gänzlich
+        100% verhindern, aber wir können sicherstellen, dass sie nicht zu einem Unfall führen!</p>
+        <p>Well since to »err is human«, as we've already established, we cannot really avoid
+        _mistakes_ altogether, but we can make sure that don't lead to an accident!</p>
       </aside>
     </section>
 
@@ -281,14 +378,18 @@
         <li>but are never the result of just one single error</li>
       </ul>
       <aside class="notes">
+        <p lang="de">Nochmal: Unfälle sind immer das Resultat einer Reihe von Fehlern, niemals die Folge
+          eines einzelnen.</p>
         <p>We've learned this already: only the concatenation of multiple error eventually lead to an accident.</p>
       </aside>
     </section>
 
     <section data-background-image="assets/nbaa-pyramid.png" data-background-size="contain">
       <aside class="notes">
-        Let's check this visualization from the NBAA, the National Business Aviation Association. Statistically,
-        out of 600 _documented_ events eventually an accident happens.
+        <p lang="de">Schauen wir uns einmal diese Grafik von der NBAA, der National Business Aviation Association, an.
+          Statistisch gesehen wird nur aus 600 dokumentierten! Ereignissen ein tatsächlicher Zwischenfall.</p>
+        <p>Let's check this visualization from the NBAA, the National Business Aviation Association. Statistically,
+          out of 600 _documented_ events eventually an accident happens.</p>
       </aside>
     </section>
 
@@ -299,9 +400,12 @@
       </figure>
 
       <aside class="notes">
-        And looking at the nuclear power industry, they also have a similar picture. However
-        Consume this INES scale with care, it has its weaknesses. It's made for PR to ease the communication
-        to the public; and not for scientific work.
+        <p lang="de">Und wenn wir in die Kernkraft hinübersehen, finden wir ein vergleichbares Bild. Allerdings,
+          kleiner Hinweis, diese Skala wird nicht für wissenschaftliche Arbeit genutzt, ist eher für PR gedacht
+          um die Kommunikation zu vereinfachen. Aber die grundsätzliche Idee wird gut vermittelt.</p>
+        <p>And looking at the nuclear power industry, they also have a similar picture. However
+          Consume this INES scale with care, it has its weaknesses. It's made for PR to ease the communication
+          to the public; and not for scientific work.</p>
       </aside>
     </section>
 
@@ -309,8 +413,11 @@
       <h2>"Mistakes make you wise"</h2>
       <img src="assets/risk-knowledge-pyramid.png" height="550" width="987"/>
 
-      <aside class="notes">We have the chance to gain knowledge and wisdom from mistakes in order to avoid them
-        in the future.
+      <aside class="notes">
+        <p lang="de">Wir haben die Chance, Wissen und Weisheit aus Fehlern abzuleiten, um solche Fehler künftig
+          zu vermeiden.</p>
+        <p>We have the chance to gain knowledge and wisdom from mistakes in order to avoid them
+        in the future.</p>
       </aside>
     </section>
 
@@ -321,7 +428,13 @@
         <li>to tighten the "cheese hole": with the organization to give it the opportunity to learn</li>
       </ul>
 
-      <aside class="notes"><p>Mistakes that have been done must be dealt with. On one hand "silently" with ourselves,
+      <aside class="notes">
+        <p lang="de">Wenn Fehler passieren, muss man sie bearbeiten. Einerseits "im Stillen" mit uns selbst,
+          das passiert meistens unbewusst sowieso; und auch, um die Größe des Lochs in der entsprechenden
+          Käsescheibe kleiner zu machen. Wir müssen es in unserer Organisation ansprechen, damit diese die Gelegenheit
+          hat zu daraus zu lernen und Maßnahmen abzuleiten. Wir kennen solche Formate schon als Post Mortems oder
+          Fuck-Up-Nights oder so.</p>
+        <p>Mistakes that have been done must be dealt with. On one hand "silently" with ourselves,
         which mostly happens unconsciously anyways; and to tighten the cheese hole of the respective slice:
         it must be addressed within the organisation to give the opoprtunity to learn. We all know this concept
         already called "post mortem" or Fuckup Nights etc.</p></aside>
@@ -334,7 +447,11 @@
         dealing with the causes
       </blockquote>
 
-      <aside class="notes"><p>To really enable this we need to fight against a "punishing mistakes" culture. When
+      <aside class="notes">
+        <p lang="de">Dafür ist es besonders wichtig, eine Punishing-Mistakes-Kultur, also eine Fehler-Bestrafungs-
+          Kultur, zu verhindern. Die Bestrafung von Fehlern fördert nur deren Vertuschung und nimmt uns
+          die Gelegenheit, daraus zu lernen.</p>
+        <p>To really enable this we need to fight against a "punishing mistakes" culture. When
         mistakes are punished, they will hardly be admitted and this in turn prevents engaging with the mistake.</p>
       </aside>
     </section>
@@ -343,16 +460,25 @@
       <h2>Goal: strengthen the safety net</h2>
       <p>For ourselves and for the system.</p>
       <p>For everybody.</p>
+
+      <aside class="notes">
+        <p lang="de">Die Devise lautet also: das Sicherheitsnetz zu stärken, die Löcher in den Käsescheiben so klein
+          wie möglich zu machen. Für uns, unsere Organisation, für alle.</p>
+      </aside>
     </section>
 
     <section>
       <h2>BFU</h2>
       <p>German Federal Bureau of Aircraft Accident Investigation</p>
 
-      <aside class="notes"><p>
-        In Germany there is the BFU, the Bundestelle für Flugunfalluntersuchung; many other aviation industry states
-        have a similar authority, who step on the plan when there are incidents.
-      </p>
+      <aside class="notes">
+        <p lang="de">In eigentlich allen Ländern der Luftfahrtindustrie gibt es eine Behörde für
+          Flugunfalluntersuchungen, in Deutschland ist das die BFI, die Bundesstelle für Flugunfalluntersuchungen.
+          Die werden auf den Plan gerufen wenn es irgendwelche Zwischenfälle oder Unfälle gibt.</p>
+        <p>
+          In Germany there is the BFU, the Bundestelle für Flugunfalluntersuchung; many other aviation industry states
+          have a similar authority, who step on the plan when there are incidents.
+        </p>
       </aside>
     </section>
 
@@ -363,11 +489,21 @@
           recurrence</strong>. It is <strong>not to
           apportion blame or liability</strong>.«
       </blockquote>
-      <aside class="notes"><p>On their website it reads,</p></aside>
+      <aside class="notes">
+        <p lang="de">Auf Ihrer Webseite ist zu lesen, die Sicherheitsuntersuchung habe ausschließlich zum Ziel, Erkenntnisse
+          zu gewinnen, mit denen künftige Unfälle und Störungen verhütet werden können; die Auswertung des Vorkommnisses
+          sowie die Schlussfolgerungen und Sicherheitsempfehlungen sollen nicht der Klärung der Schuld- bzw. Haftungsfrage
+          dienen.</p>
+        <p>On their website it reads,</p></aside>
     </section>
 
     <section data-background-image="assets/screenshot-bfu.png" data-background-size="contain">
-      <aside class="notes"><p>They publish thorough reports of the sequence of events they concluded on during
+      <aside class="notes">
+        <p lang="en">Auf ihrer Webseite veröffentlichen sie präzise Berichte über die Ergebnisse ihrer Untersuchtung.
+          Ich kann wirklich jedem ans Herz legen, da einmal reinzuschauen; es ist wirklich faszinierend, wie sie
+          in ihrer Narrative auf Schuldzuweisungen verzichten und wirklich nur Fakten zusammentragen. Schlussfolgerungen
+          überlassen sie dem Leser.</p>
+        <p>They publish thorough reports of the sequence of events they concluded on during
         their investigation. I can really recommend checking these out, it's really fascinating to see how they _not_
         blame in their narrative. It is really just an observation and it's up to the reader to make any
         conclusions.</p>
@@ -378,13 +514,28 @@
       <h2>Investigation analysis model</h2>
       <p>The Australian Transport Safety Bureau (ATSB) developed a comprehensive investigation analysis framework</p>
 
-      <aside class="notes"><p>A similar authority from Down Under, the ATSB, once published their Investigation analysis
+      <aside class="notes">
+        <p lang="de">Eine vergleichbare Behöre in Australien, die ATSB, hat einmal ihr Investigation Analysis Model
+          veröffentlicht.</p>
+        <p>A similar authority from Down Under, the ATSB, once published their Investigation analysis
         model.</p></aside>
     </section>
 
     <section>
       <img class="stretch" src="assets/atsb-inv-analysis.jpg" height="407" width="494"/>
-      <aside class="notes"><p>
+      <aside class="notes">
+        <p lang="de">Wie erkennen unsere Käsescheiben wieder: ganz oben, an der Wurzel, sind die organisatorischen
+          Einflüsse, die eine Rolle gespielt haben. Hier geht's um Regulatorien, Kultur, Change Management usw.<br>
+          Dann kommt Risikominierung: Checklisten ermöglichen, Vier-Augen-Prinzip, die richtigen Menschen für den
+          Job haben, usw.<br>
+          Local conditions sind bspw. Müdigkeit, Arbeitslast, Arbeitsplatzbeleuchtung oder Stresslevel.<br>
+          Dann kommt der Übergang zu den personenbezogenen Einflüssen:<br>
+          Handlungen sind Unachtsamkeit, zu viel Routine, ein Tippfehler, ein Übersehen<br>
+          Und am Ende, und hier können wir den eigentlichen Unfall nicht mehr vermeiden, ist der Zwischenfall: ein
+          Produktionsausfall, eine Datenbank gelöscht, oder ein Sicherheitszwischenfall. — Und beachtet den Pfeil rechts:
+          die Untersuchungsreihenfolge ist, natürlich, vom Ereignis am Ende nach oben woe die organisatorischen
+          Gründe liegen.</p>
+        <p>
         We can resemble the cheese slices again. At the top, the root, there's the organizational influences that were
         playing a role. This is about Regulations, culture, change management.<br>
         Then there's risk minimization. To allow for check lists, code review, pair programming or test scenarios.<br>
@@ -411,7 +562,12 @@
             sequence!
           </li>
         </ul>
-        <aside class="notes"><p>Important to be aware of is that the organizational influences, even though
+        <aside class="notes">
+          <p lang="de">Wichtig ist also zu verstehen, dass die organisatorischen Einflüsse, obwohl sie tief begraben
+            unter der Oberfläche liegen, eine wichtige Rolle darin spielen, Unfälle überhaupt zu ermöglichen. Und
+            eben weil sie so tief begraben liegen, kommen sie erst durch einen auslösenden Faktor ans Licht.
+            [perhaps anecdote]</p>
+          <p>Important to be aware of is that the organizational influences, even though
           deeply buried, take an important role in allowance of an accident. And since they're so deeply buried,
           they only come to light in combination with an actually triggering factor.</p>
           <p>[perhaps anecdote of running out of fuel]</p>
@@ -483,7 +639,12 @@
         <li>What circumstances favored the error?<br><small class="fragment">i.e. Team/Orga/Tech</small></li>
       </ul>
 
-      <aside class="notes"><p>So when conducting a cause search, don't ask […]</p></aside>
+      <aside class="notes">
+        <p lang="de">Bei der Ursachenforschung fragen wir also nicht "wer hat Schuld" sondern klären rückwärts erst
+          einmal a) Was genau ist schiefgelaufen, was wurde falsch gemacht? — b) warum wurde es falsch gemacht? —
+          und welche Umstände haben diesen Fehler begünstigt? Das wäre bspw. das Team, die Organisation, die zur Verfügung
+          stehenden Arbeitsmittel.</p>
+        <p>So when conducting a cause search, don't ask […]</p></aside>
     </section>
 
     <section>
@@ -492,11 +653,19 @@
         <li>Abandon PuMist culture</li>
         <li>Turning to constructive error management</li>
       </ul>
+      <aside class="notes">
+        <p lang="de">Am Ende bleibt also zu sagen, und das ist nichts Neues: Lernt aus Fehlern! Wir wollen keine
+        Bestrafungskultur, sondern eine konstruktive Fehlermanagement-Kultur.</p>
+      </aside>
     </section>
 
     <section>
       <h2>You as the employees know the weak points.</h2>
       <p>You can gather them together.</p>
+
+      <aside class="notes">
+        <p lang="de">Ihr als Mitarbeiter kennt die Schwachstellen, ihr könnt sie zusamentragen!</p>
+      </aside>
     </section>
 
     <section>
@@ -505,13 +674,21 @@
         <li>What problems do you see in the company?</li>
         <li>What can/should the company do to improve?</li>
       </ul>
+      <aside class="notes">
+        <p lang="de">Reflektiert also ein bisschen und überlegt Euch, welche Probleme ihr seht; und was das Unternehmen
+          tun kann, um sich zu verbessern.</p>
+      </aside>
     </section>
 
     <section data-background-image="assets/pexels-lukas-652352.jpg" data-background-opacity="0.6">
       <h2>In last consequence</h2>
       <p>you are asked yourselves!</p>
 
-      <aside class="notes"><p>You are the actors at the front line who are likely blamed first.</p></aside>
+      <aside class="notes">
+        <p lang="de">In letzter Konsequenz seid Ihr gefragt! Ihr seid schließlich die Aktoren am Ende bei denen
+          häufig der Fehler zuerst gesucht wird.</p>
+        <p>You are the actors at the front line who are likely blamed first.</p>
+      </aside>
 
       <footer><small><a href="https://www.pexels.com/photo/man-in-suit-652352/">Photo</a> by Lukas from Pexels</small>
       </footer>
